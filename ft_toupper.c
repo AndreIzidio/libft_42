@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aizidio- <aizidio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 15:59:28 by aizidio-          #+#    #+#             */
-/*   Updated: 2025/07/21 16:08:02 by aizidio-         ###   ########.fr       */
+/*   Created: 2025/07/27 15:05:48 by aizidio-          #+#    #+#             */
+/*   Updated: 2025/07/27 15:08:06 by aizidio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-
-int ft_isalpha(int c);
-
-int ft_isalpha(int c)
+int ft_toupper(int l)
 {
-	if(c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z')
+	if(l >= 'a' && l <= 'z')
 	{
-	return (1);
+		return (l - 32);
 	}
-	return 0;
+	return (l);
 }
