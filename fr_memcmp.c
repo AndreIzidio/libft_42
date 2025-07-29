@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   fr_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aizidio- <aizidio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/28 16:21:00 by aizidio-          #+#    #+#             */
-/*   Updated: 2025/07/29 12:37:18 by aizidio-         ###   ########.fr       */
+/*   Created: 2025/07/29 17:28:22 by aizidio-          #+#    #+#             */
+/*   Updated: 2025/07/29 17:57:01 by aizidio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strnstr(const char *haystack, const char *needle, unsigned int len)
+#include<stdio.h>
+
+int memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned int i = 0;
-	unsigned int j;
+	size_t i = 0;
 
-	if(needle[i] == '\0')
-	{
-		return (char *)haystack;
-	}
+	const unsigned char *ptr_s1 = (const char *)s1;
+	const unsigned char *ptr_s2 = (const char *)s2;
 
-	while (i < len && (haystack[i] != '\0'))
+	while (i < n)
 	{
-		j = 0;
-		while ((haystack[i + j] == needle[j]) && (i + j < len))
-		{
-			if (needle[j + 1] == '\0')
-				return((char *)&haystack[i]);
-			j++;
-		}
+		if (ptr_s1[i] != ptr_s2[i])
+			return(ptr_s1[i] - ptr_s2[i]);
 		i++;
 	}
-	return (0);
+	return 0;
 }
+
