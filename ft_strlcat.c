@@ -1,30 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fr_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aizidio- <aizidio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/29 17:28:22 by aizidio-          #+#    #+#             */
-/*   Updated: 2025/07/29 17:57:01 by aizidio-         ###   ########.fr       */
+/*   Created: 2025/08/07 14:51:53 by aizidio-          #+#    #+#             */
+/*   Updated: 2025/08/07 15:12:59 by aizidio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
 
-int memcmp(const void *s1, const void *s2, size_t n)
+size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t i = 0;
+	size_t len_dest = 0;
+	size_t len_src = 0;
+	size_t i;
 
-	const unsigned char *ptr_s1 = (const char *)s1;
-	const unsigned char *ptr_s2 = (const char *)s2;
-
-	while (i < n)
+	while(dst[len_dest] != '\0' && len_dest < size)
 	{
-		if (ptr_s1[i] != ptr_s2[i])
-			return(ptr_s1[i] - ptr_s2[i]);
+		len_dest++;
+	}
+
+	while (src[len_src] != '\0')
+	{
+		len_src++;
+	}
+
+	if(len_dest == size)
+		return size + len_src;
+
+	i = 0;
+	while(src[i] && (len_dest + i + 1 < size))
+	{
+		dst[len_dest + i] = src[i];
 		i++;
 	}
-	return 0;
+	dst[len_dest + i] = '\0';
+	return len_dest + len_src;
 }
-
