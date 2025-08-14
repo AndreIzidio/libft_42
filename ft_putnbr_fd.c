@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aizidio- <aizidio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/25 17:37:12 by aizidio-          #+#    #+#             */
-/*   Updated: 2025/08/09 17:03:09 by aizidio-         ###   ########.fr       */
+/*   Created: 2025/08/14 11:50:11 by aizidio-          #+#    #+#             */
+/*   Updated: 2025/08/14 19:01:49 by aizidio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include"libft.h"
+#include <unistd.h>
+#include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
+	long int	lang;
+
+	lang = n;
+	if (lang < 0)
 	{
-		return (1);
+		ft_putchar_fd('-', fd);
+		lang = -lang;
 	}
-	return (0);
+	if (lang > 9)
+	{
+		ft_putnbr_fd(lang / 10, fd);
+	}
+	ft_putchar_fd((lang % 10) + '0', fd);
 }

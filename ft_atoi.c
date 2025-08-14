@@ -6,13 +6,13 @@
 /*   By: aizidio- <aizidio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 15:09:13 by aizidio-          #+#    #+#             */
-/*   Updated: 2025/07/27 15:29:42 by aizidio-         ###   ########.fr       */
+/*   Updated: 2025/08/14 18:40:33 by aizidio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
 
-int	ft_atoi(char *str)
+int	ft_atoi(char const *str)
 {
 	int	i;
 	int	num;
@@ -26,7 +26,7 @@ int	ft_atoi(char *str)
 	{
 		i++;
 	}
-	while (str[i] == '+' || str[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
 			num = -num;
@@ -34,14 +34,8 @@ int	ft_atoi(char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		res = res * 10 + (str[i] - '0');
+		res = (res * 10) + (str[i] - '0');
 		i++;
 	}
 	return (res * num);
 }
-
-int main()
-{
-	printf("number %d", ft_atoi("------12345"));
-}
-

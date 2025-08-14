@@ -6,26 +6,17 @@
 /*   By: aizidio- <aizidio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 17:38:40 by aizidio-          #+#    #+#             */
-/*   Updated: 2025/07/25 17:38:42 by aizidio-         ###   ########.fr       */
+/*   Updated: 2025/08/09 17:03:59 by aizidio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
 
-int ft_isalpha(int c);
-
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-	if(c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z')
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 	{
-	printf("aacca");
-	return (1);
+		return (1);
 	}
-	printf("aaabbbb");
-	return 0;
-}
-
-int main()
-{
-	ft_isalpha('G');
+	return (0);
 }

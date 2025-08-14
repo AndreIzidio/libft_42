@@ -6,23 +6,20 @@
 /*   By: aizidio- <aizidio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 17:39:25 by aizidio-          #+#    #+#             */
-/*   Updated: 2025/07/25 17:39:26 by aizidio-         ###   ########.fr       */
+/*   Updated: 2025/08/14 19:12:13 by aizidio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include "libft.h"
 
-int ft_strlen(char *str);
-
-int ft_strlen(char *str)
+size_t	ft_strlen(char const *str)
 {
-	int count;
+	size_t	count;
 
 	count = 0;
-	while(str[count] != '\0')
+	while (str[count] != '\0')
 	{
 		count++;
 	}
-	printf("res %d", count);
-	return(count);
+	return (count);
 }

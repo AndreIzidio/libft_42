@@ -6,13 +6,13 @@
 /*   By: aizidio- <aizidio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 15:05:48 by aizidio-          #+#    #+#             */
-/*   Updated: 2025/07/27 15:08:06 by aizidio-         ###   ########.fr       */
+/*   Updated: 2025/08/09 17:45:23 by aizidio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int l)
+int	ft_toupper(int l)
 {
-	if(l >= 'a' && l <= 'z')
+	if (l >= 'a' && l <= 'z')
 	{
 		return (l - 32);
 	}

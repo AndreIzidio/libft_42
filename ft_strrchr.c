@@ -6,39 +6,25 @@
 /*   By: aizidio- <aizidio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 14:44:56 by aizidio-          #+#    #+#             */
-/*   Updated: 2025/07/28 15:19:46 by aizidio-         ###   ########.fr       */
+/*   Updated: 2025/08/14 19:17:35 by aizidio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include "libft.h"
 
-char *ft_strrchr(const char *str, int c)
+char	*ft_strrchr(char const *s, int c)
 {
-	int i = 0;
-	const char *last = 0;
+	int			i;
+	const char	*last = NULL;
 
-	while(*str != '\0')
+	i = 0;
+	while (s[i] != '\0')
 	{
-		if(*str == (char)c)
-		{
-			last = str;
-		}
-		str++;
+		if (s[i] == (char)c)
+			last = &s[i];
+		i++;
 	}
-	if(c == '\0')
-	{
-		return(char *)&str[i];
-	}
+	if ((char)c == '\0')
+		return ((char *)&s[i]);
 	return ((char *)last);
-}
-
-int main()
-{
-	char *res = ft_strrchr("teste de usuario", 'u');
-	if (res)
-		printf("Achado: %s\n", res);  // Saída: "uso"
-	else
-		printf("Não encontrado\n");
-
-	return 0;
 }

@@ -6,18 +6,20 @@
 /*   By: aizidio- <aizidio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 15:29:18 by aizidio-          #+#    #+#             */
-/*   Updated: 2025/08/07 15:31:19 by aizidio-         ###   ########.fr       */
+/*   Updated: 2025/08/09 16:55:46 by aizidio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *ptr = (unsigned char *)s;
-	size_t i = 0;
+	unsigned char	*ptr;
+	size_t			i;
 
-	while(i<n)
+	i = 0;
+	ptr = (unsigned char *)s;
+	while (i < n)
 	{
 		ptr[i] = 0;
 		i++;

@@ -6,17 +6,15 @@
 /*   By: aizidio- <aizidio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 17:39:42 by aizidio-          #+#    #+#             */
-/*   Updated: 2025/07/25 17:39:43 by aizidio-         ###   ########.fr       */
+/*   Updated: 2025/08/09 17:05:03 by aizidio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int c);
-
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-	if(c >= 0 && c <= 127)
+	if ((c >= 0) && (c <= 127))
 	{
-		return(1);
+		return (1);
 	}
-	return(0);
+	return (0);
 }

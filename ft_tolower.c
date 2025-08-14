@@ -6,13 +6,13 @@
 /*   By: aizidio- <aizidio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 17:40:36 by aizidio-          #+#    #+#             */
-/*   Updated: 2025/08/07 14:24:02 by aizidio-         ###   ########.fr       */
+/*   Updated: 2025/08/09 17:45:10 by aizidio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-	if(c >= 'A' && c <= 'Z')
+	if (c >= 'A' && c <= 'Z')
 	{
 		return (c + 32);
 	}
